@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# pyenv
+function install_pyenv {
+	# Variables
+	SHORTNAME="Pyenv"
+	NAME="$SHORTNAME - Python Version Manager"
+	# Check if already installed
+	if [ ! -d ~/.pyenv ]; then
+		echo_message info "$NAME is not installed."
+		# Install
+		echo_message info "Installing $SHORTNAME..."
+		curl -sSL https://pyenv.run | bash
+		# Done
+		echo_message success "Installation of $SHORTNAME complete."
+		whiptail --title "Finished" --msgbox "Installation of $NAME complete." 8 56
+	else
+		# Already installed
+		echo_message info "$NAME already installed."
+		whiptail --title "Finished" --msgbox "$NAME is already installed." 8 56
+	fi
+}
