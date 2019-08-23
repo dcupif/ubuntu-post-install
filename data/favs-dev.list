@@ -1,11 +1,9 @@
 autotools-dev
-bzr
+fzf
 git
 gtk-3-examples
 gtk-doc-tools
-icontool
+jq
 libgtk-3-dev
-nodejs
-npm
-optipng
+tig
 x11-apps
