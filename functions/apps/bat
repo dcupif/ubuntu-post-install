@@ -1,0 +1,13 @@
+#!/bin/bash
+
+function install_bat {
+	# Variables
+	USER="sharkdp"
+	NAME="bat"
+	VERSION=$(latest_github_release $USER $NAME)
+	PACKAGE="${NAME}_${VERSION}"
+	echo_message info "PACKAGE ${PACKAGE}"
+	REMOTE="https://github.com/${USER}/${NAME}/releases/download/v${VERSION}"
+	# Download and install remote package
+	install_remote_package "$NAME" $PACKAGE $REMOTE install_thirdparty
+}
