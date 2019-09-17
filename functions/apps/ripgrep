@@ -1,0 +1,13 @@
+#!/bin/bash
+
+function install_ripgrep {
+	# Variables
+	USER="BurntSushi"
+	NAME="ripgrep"
+	VERSION=$(latest_github_release $USER $NAME)
+	PACKAGE="${NAME}_${VERSION}"
+	REMOTE="https://github.com/${USER}/${NAME}/releases/download/${VERSION}"
+	echo_message info ${REMOTE}
+	# Download and install remote package
+	install_remote_package "$NAME" $PACKAGE $REMOTE install_thirdparty
+}
